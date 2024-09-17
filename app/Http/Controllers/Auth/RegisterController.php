@@ -42,6 +42,7 @@ final class RegisterController extends Controller
         $user->assignRole(Roles::STAFF);
 
         return redirect()
-            ->route('auth.login.view');
+            ->route('auth.login.view')
+            ->with('toastSuccess', 'User registered successfully.');
     }
 }

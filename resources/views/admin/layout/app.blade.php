@@ -42,6 +42,7 @@
 
     <!-- plugins:js -->
     @include('admin.layout.script')
+    @include('components.notification')
     <!-- end-plugins:js -->
 
 </body>

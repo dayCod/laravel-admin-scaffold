@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/iziToast/dist/css/iziToast.min.css') }}">
 </head>
 
 <body>
@@ -23,14 +24,15 @@
                             </div>
                             <h4>Hello! let's get started</h4>
                             <h6 class="font-weight-light">Sign in to continue.</h6>
-                            <form class="pt-3">
+                            <form class="pt-3" action="{{ route('auth.login.action') }}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                                 </div>
                                 <div class="mt-3">
                                     <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn text-uppercase">
@@ -57,6 +59,8 @@
     <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('assets/js/misc.js') }}"></script>
+    <script src="{{ asset('assets/vendors/iziToast/dist/js/iziToast.min.js') }}"></script>
+    @include('components.notification')
     <!-- endinject -->
 </body>
 
