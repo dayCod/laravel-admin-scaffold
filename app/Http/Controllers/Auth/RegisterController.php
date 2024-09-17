@@ -6,7 +6,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Contracts\Roles;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
