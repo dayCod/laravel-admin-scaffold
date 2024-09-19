@@ -22,7 +22,9 @@ final class RolePermissionController extends Controller
      */
     public function index(): View
     {
-        $roles = Role::withCount('permissions')->get();
+        $roles = Role::withCount('permissions')
+            ->where('name', '!=', 'admin')
+            ->get();
 
         return view('admin.utilities.role-permission.index', compact('roles'));
     }
