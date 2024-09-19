@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Contracts\Roles;
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,5 +19,8 @@ final class RoleSeeder extends Seeder
     {
         collect(Roles::collection)
             ->each(fn (string $role) => Role::create(['name' => $role]));
+
+        $adminRole = Role::where('name', Roles::ADMIN)->first();
+        $adminRole->syncPermissions(Permission::all()->pluck('name')->toArray());
     }
 }

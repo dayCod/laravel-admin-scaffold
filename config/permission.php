@@ -2,6 +2,22 @@
 
 return [
 
+    'list' => [
+
+        /**
+         * List of permissions
+         * You can add your custom permissions here
+         * Example:
+         * 'utilities.read'
+         */
+        'utilities.read',
+        'role_permission.read',
+        'user_role.read',
+        'activity_log.read',
+        'visitor_counter.read',
+        'users.read',
+    ],
+
     'models' => [
 
         /*

@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('pageTitle')</title>
 
     <!-- plugins:css -->
@@ -43,6 +44,8 @@
     <!-- plugins:js -->
     @include('admin.layout.script')
     @include('components.notification')
+    @include('components.datatable')
+    @include('components.swal-delete')
     <!-- end-plugins:js -->
 
 </body>

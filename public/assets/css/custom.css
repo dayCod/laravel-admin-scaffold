@@ -1,0 +1,17 @@
+div.dt-container .dt-input {
+    border: 1px solid #d8d4d4 !important;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current, div.dt-container .dt-paging .dt-paging-button.current:hover {
+    background: linear-gradient(to right, #da8cff, #9a55ff) !important;
+    color: #fff !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 3px !important;
+}
+
+div.dt-container div.dt-layout-row {
+    margin-bottom: 25px !important;
+
+}

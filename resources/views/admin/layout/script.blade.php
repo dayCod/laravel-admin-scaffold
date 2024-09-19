@@ -4,7 +4,10 @@
 <script src="{{ asset('assets/js/jquery.cookie.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
 <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-<script src="{{ asset('assets/js/misc.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/misc.js') }}"></script> --}}
 <script src="{{ asset('assets/js/dashboard.js') }}"></script>
 <script src="{{ asset('assets/js/todolist.js') }}"></script>
 <script src="{{ asset('assets/vendors/iziToast/js/iziToast.min.js') }}"></script>
+<script src="https://cdn.datatables.net/2.1.6/js/dataTables.min.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
