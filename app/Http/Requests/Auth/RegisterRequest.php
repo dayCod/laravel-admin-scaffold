@@ -30,4 +30,17 @@ final class RegisterRequest extends FormRequest
             'password' => ['required', 'string', 'min:8'],
         ];
     }
+
+    /**
+     * Prepare the request data for validation by setting the `email_verified_at` field to the current timestamp.
+     *
+     * This method is called automatically by Laravel before the validation rules are applied. It is used to
+     * pre-process the request data before it is validated.
+     */
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'email_verified_at' => now()
+        ]);
+    }
 }

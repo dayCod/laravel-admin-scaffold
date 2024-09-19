@@ -35,10 +35,7 @@ final class RegisterController extends Controller
      */
     public function registerAction(RegisterRequest $request): RedirectResponse
     {
-        $user = User::create($request->validated() + [
-            'email_verified_at' => now(),
-        ]);
-
+        $user = User::create($request->all());
         $user->assignRole(Roles::STAFF);
 
         return redirect()
