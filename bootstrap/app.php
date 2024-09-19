@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -29,7 +30,13 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+
+        // Using Closure Guest Redirect to
+        $middleware->redirectGuestsTo(fn (Request $request) => route('auth.login.view'));
+
+        // Using Closure Authenticated Users Redirect to
+        $middleware->redirectUsersTo(fn (Request $request) => route('admin.dashboard'));
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
