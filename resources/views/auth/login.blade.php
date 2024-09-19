@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/iziToast/dist/css/iziToast.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/iziToast/css/iziToast.min.css') }}">
 </head>
 
 <body>
@@ -55,11 +55,12 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('assets/js/misc.js') }}"></script>
-    <script src="{{ asset('assets/vendors/iziToast/dist/js/iziToast.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/iziToast/js/iziToast.min.js') }}"></script>
     @include('components.notification')
     <!-- endinject -->
 </body>

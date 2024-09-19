@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 final class LogoutController extends Controller
 {
+    /**
+     * Logs out the current user and redirects them to the login page.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();
