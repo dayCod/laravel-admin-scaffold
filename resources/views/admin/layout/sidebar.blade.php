@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/typography.html">
+                        <a class="nav-link {{ request()->routeIs('admin.utilities.activity_log.*') ? 'active' : '' }}" href="{{ route('admin.utilities.activity_log.index') }}">
                             Activity Log
                         </a>
                     </li>
@@ -51,12 +51,6 @@
                     </li>
                 </ul>
             </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="pages/icons/mdi.html">
-                <span class="menu-title">Users</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
-            </a>
         </li>
     </ul>
 </nav>

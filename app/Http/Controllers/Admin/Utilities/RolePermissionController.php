@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Admin\Utilities;
 
+use App\Actions\ActivityLogger;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Utilities\RolePermission\CreateRolePermissionRequest;
 use App\Http\Requests\Utilities\RolePermission\UpdateRolePermissionRequest;
@@ -15,6 +16,15 @@ use Illuminate\Http\RedirectResponse;
 
 final class RolePermissionController extends Controller
 {
+    /**
+     * Constructs a new instance of the RolePermissionController class.
+     *
+     * @param ActivityLogger $activityLogger The activity logger instance to use for logging actions.
+     */
+    public function __construct(
+        protected ActivityLogger $activityLogger,
+    ) {}
+
     /**
      * Display a listing of the resource.
      *
@@ -51,6 +61,8 @@ final class RolePermissionController extends Controller
     {
         $role = Role::create(['name' => $request->role_name]);
         $role->syncPermissions($request->permissions);
+
+        $this->activityLogger->recordLogger(action: 'create', prop: 'Role Permision');
 
         return redirect()
             ->route('admin.utilities.rolepermission.index')
@@ -98,6 +110,8 @@ final class RolePermissionController extends Controller
         $role->update(['name' => $request->role_name]);
         $role->syncPermissions($request->permissions);
 
+        $this->activityLogger->recordLogger(action: 'update', prop: 'Role Permision');
+
         return redirect()
             ->route('admin.utilities.rolepermission.index')
             ->with('toastSuccess', 'Role Permission Updated Successfully');
@@ -115,6 +129,8 @@ final class RolePermissionController extends Controller
         $permissionsId = $role->permissions()->get()->pluck('id')->toArray();
         $role->permissions()->detach($permissionsId);
         $role->delete();
+
+        $this->activityLogger->recordLogger(action: 'delete', prop: 'Role Permision');
 
         return response()->json(['success' => true], 200);
     }

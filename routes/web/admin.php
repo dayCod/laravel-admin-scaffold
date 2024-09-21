@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Utilities\ActivityLogController;
 use App\Http\Controllers\Admin\Utilities\RolePermissionController;
 use App\Http\Controllers\Admin\Utilities\UserRoleController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,10 @@ Route::group(['prefix' => 'utilities', 'as' => 'utilities.'], function () {
         Route::get('/{id}/edit', [UserRoleController::class, 'edit'])->name('edit');
         Route::put('/{id}/update', [UserRoleController::class, 'update'])->name('update');
         Route::delete('/{id}/delete', [UserRoleController::class, 'delete'])->name('delete');
+    });
+
+    Route::group(['prefix' => 'activity-log', 'as' => 'activity_log.'], function () {
+        Route::get('/', [ActivityLogController::class, 'index'])->name('index');
     });
 
 });
