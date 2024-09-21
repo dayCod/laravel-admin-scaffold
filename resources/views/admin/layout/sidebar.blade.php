@@ -35,7 +35,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/buttons.html">
+                        <a class="nav-link {{ request()->routeIs('admin.utilities.userrole.*') }}" href="{{ route('admin.utilities.userrole.index') }}">
                             User & Role
                         </a>
                     </li>
