@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="my-3 d-flex justify-content-between align-items-center">
                                     <a href="{{ route('auth.login.view') }}" class="auth-link text-black">Login Account</a>
-                                    <a href="#" class="auth-link text-black">Forgot password?</a>
+                                    {{-- <a href="#" class="auth-link text-black">Forgot password?</a> --}}
                                 </div>
                             </form>
                         </div>
