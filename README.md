@@ -12,5 +12,6 @@ To set up the Leave Request system, follow these steps:
 4. Set up email notifications
 5. Run migrations and seeders
 6. Start the application
+7. Access the application by navigating to the `/admin`
 
 For detailed installation instructions, please refer to the [Installation Guide](https://laravel.com/docs/11.x).
