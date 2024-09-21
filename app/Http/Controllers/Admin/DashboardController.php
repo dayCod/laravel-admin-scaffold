@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ProfileRequest;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProfileRequest;
+use App\Models\ActivityLog;
+use App\Models\Permission;
+use App\Models\VisitorCounter;
+use Illuminate\Http\RedirectResponse;
 
 final class DashboardController extends Controller
 {
@@ -20,7 +24,19 @@ final class DashboardController extends Controller
      */
     public function index(): View
     {
-        return view('admin.index');
+        $totalRoles = Role::count();
+        $totalPermissions = Permission::count();
+        $totalUsers = User::whereHas('roles', fn ($q) => $q->where('name', '!=', 'admin'))->count();
+        $totalDailyActivities = ActivityLog::whereDate('created_at', now()->today())->count();
+        $totalDailyVisitors = VisitorCounter::whereDate('created_at', now()->today())->count();
+
+        return view('admin.index', [
+            'totalRoles' => $totalRoles,
+            'totalPermissions' => $totalPermissions,
+            'totalUsers' => $totalUsers,
+            'totalDailyActivities' => $totalDailyActivities,
+            'totalDailyVisitors' => $totalDailyVisitors,
+        ]);
     }
 
     /**

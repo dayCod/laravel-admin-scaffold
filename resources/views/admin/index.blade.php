@@ -22,37 +22,53 @@
 @section('pageContent')
 
     <div class="row">
-        <div class="col-md-4 stretch-card grid-margin">
-            <div class="card bg-gradient-danger card-img-holder text-white">
+        <div class="col-md-3 stretch-card grid-margin">
+            <div class="card bg-gradient-primary card-img-holder text-white" style="height: 150px;">
                 <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Weekly Sales <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Roles <i class="mdi mdi-account mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">$ 15,0000</h2>
-                    <h6 class="card-text">Increased by 60%</h6>
+                    <h2 class="mb-5">{{ $totalRoles }}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 stretch-card grid-margin">
-            <div class="card bg-gradient-info card-img-holder text-white">
+        <div class="col-md-3 stretch-card grid-margin">
+            <div class="card bg-gradient-info card-img-holder text-white" style="height: 150px;">
                 <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Weekly Orders <i
-                            class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Permissions <i class="mdi mdi mdi-alert-circle mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">45,6334</h2>
-                    <h6 class="card-text">Decreased by 10%</h6>
+                    <h2 class="mb-5">{{ $totalPermissions }}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 stretch-card grid-margin">
-            <div class="card bg-gradient-success card-img-holder text-white">
+        <div class="col-md-3 stretch-card grid-margin">
+            <div class="card bg-gradient-success card-img-holder text-white" style="height: 150px;">
                 <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Visitors Online <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Users <i class="mdi mdi mdi-account-multiple mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">95,5741</h2>
-                    <h6 class="card-text">Increased by 5%</h6>
+                    <h2 class="mb-5">{{ $totalUsers }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 stretch-card grid-margin">
+            <div class="card bg-gradient-danger card-img-holder text-white" style="height: 150px;">
+                <div class="card-body">
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Daily Activities <i class="mdi mdi mdi-account-multiple mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">{{ $totalDailyActivities }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 stretch-card grid-margin">
+            <div class="card bg-gradient-danger card-img-holder text-white" style="height: 150px;">
+                <div class="card-body">
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Daily Visitors <i class="mdi mdi mdi-account-multiple mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">{{ $totalDailyVisitors }}</h2>
                 </div>
             </div>
         </div>
