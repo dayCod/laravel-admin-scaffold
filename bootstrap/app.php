@@ -31,6 +31,11 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
 
+        // Middleware Aliases
+        $middleware->alias([
+            'visitor-counter' => \App\Http\Middleware\VisitorCounterMiddleware::class,
+        ]);
+
         // Using Closure Guest Redirect to
         $middleware->redirectGuestsTo(fn (Request $request) => route('auth.login.view'));
 

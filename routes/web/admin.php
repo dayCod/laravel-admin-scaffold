@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Utilities\ActivityLogController;
 use App\Http\Controllers\Admin\Utilities\RolePermissionController;
 use App\Http\Controllers\Admin\Utilities\UserRoleController;
+use App\Http\Controllers\Admin\Utilities\VisitorCounterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -36,6 +37,10 @@ Route::group(['prefix' => 'utilities', 'as' => 'utilities.'], function () {
 
     Route::group(['prefix' => 'activity-log', 'as' => 'activity_log.'], function () {
         Route::get('/', [ActivityLogController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => 'visitor-counter', 'as' => 'visitor_counter.'], function () {
+        Route::get('/', [VisitorCounterController::class, 'index'])->name('index');
     });
 
 });

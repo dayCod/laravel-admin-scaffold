@@ -45,7 +45,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/typography.html">
+                        <a class="nav-link {{ request()->routeIs('admin.utilities.visitor_counter.*') ? 'active' : '' }}" href="{{ route('admin.utilities.visitor_counter.index') }}">
                             Visitor Counter
                         </a>
                     </li>
