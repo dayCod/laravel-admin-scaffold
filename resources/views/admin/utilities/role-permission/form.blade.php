@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('pageTitle', 'Profile')
+@section('pageTitle', 'Role Permission')
 
 @section('pageBreadcrumb')
 
