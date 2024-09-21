@@ -13,5 +13,6 @@ To set up the Leave Request system, follow these steps:
 5. Run migrations and seeders
 6. Start the application
 7. Access the application by navigating to the `/admin`
+8. Login with email: `admin@mail.com` and password: `password`
 
 For detailed installation instructions, please refer to the [Installation Guide](https://laravel.com/docs/11.x).
